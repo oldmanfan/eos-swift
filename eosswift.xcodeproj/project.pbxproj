@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -112,7 +112,6 @@
 		3C02806221907C0E00D22DF0 /* BlockHeaderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FC321907C0E00D22DF0 /* BlockHeaderState.swift */; };
 		3C02806321907C0E00D22DF0 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FC421907C0E00D22DF0 /* Region.swift */; };
 		3C02806421907C0E00D22DF0 /* BlockNumOrId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FC621907C0E00D22DF0 /* BlockNumOrId.swift */; };
-		3C02806521907C0E00D22DF0 /* VoteChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FCA21907C0E00D22DF0 /* VoteChain.swift */; };
 		3C02806621907C0E00D22DF0 /* VoteArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FCC21907C0E00D22DF0 /* VoteArgs.swift */; };
 		3C02806721907C0E00D22DF0 /* VoteBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FCD21907C0E00D22DF0 /* VoteBody.swift */; };
 		3C02806821907C0E00D22DF0 /* TransactionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C027FCE21907C0E00D22DF0 /* TransactionContext.swift */; };
@@ -227,6 +226,7 @@
 		3CEA5FE8220E358B0069E716 /* TimestampWriterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA5FE7220E358B0069E716 /* TimestampWriterTest.swift */; };
 		3D07B6E4316429C03642301E /* Pods_eosswift_eosswiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D0ED85A4C240BB0149AE93 /* Pods_eosswift_eosswiftTests.framework */; };
 		A319CB2584D79C91989BED11 /* Pods_eosswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDC98C293614C9CE6F2831D /* Pods_eosswift.framework */; };
+		A6447D1A24BFF2CB009CEF6C /* VoteChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6447D1924BFF2CB009CEF6C /* VoteChain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,7 +353,6 @@
 		3C027FC321907C0E00D22DF0 /* BlockHeaderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockHeaderState.swift; sourceTree = "<group>"; };
 		3C027FC421907C0E00D22DF0 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		3C027FC621907C0E00D22DF0 /* BlockNumOrId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockNumOrId.swift; sourceTree = "<group>"; };
-		3C027FCA21907C0E00D22DF0 /* VoteChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteChain.swift; sourceTree = "<group>"; };
 		3C027FCC21907C0E00D22DF0 /* VoteArgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteArgs.swift; sourceTree = "<group>"; };
 		3C027FCD21907C0E00D22DF0 /* VoteBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteBody.swift; sourceTree = "<group>"; };
 		3C027FCE21907C0E00D22DF0 /* TransactionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionContext.swift; sourceTree = "<group>"; };
@@ -469,6 +468,7 @@
 		3CEA5FE5220E34790069E716 /* PublicKeyWriterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyWriterTest.swift; sourceTree = "<group>"; };
 		3CEA5FE7220E358B0069E716 /* TimestampWriterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampWriterTest.swift; sourceTree = "<group>"; };
 		4932DCA7DC0BD5480001864E /* Pods_eos_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eos_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6447D1924BFF2CB009CEF6C /* VoteChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteChain.swift; sourceTree = "<group>"; };
 		BBDC98C293614C9CE6F2831D /* Pods_eosswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eosswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D0ED85A4C240BB0149AE93 /* Pods_eosswift_eosswiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eosswift_eosswiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -928,8 +928,8 @@
 		3C027FC921907C0E00D22DF0 /* vote */ = {
 			isa = PBXGroup;
 			children = (
+				A6447D1924BFF2CB009CEF6C /* VoteChain.swift */,
 				3C027FCB21907C0E00D22DF0 /* actions */,
-				3C027FCA21907C0E00D22DF0 /* VoteChain.swift */,
 			);
 			path = vote;
 			sourceTree = "<group>";
@@ -1447,32 +1447,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-eosswift-eosswiftTests/Pods-eosswift-eosswiftTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-eosswift-eosswiftTests/Pods-eosswift-eosswiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-eosswift-eosswiftTests/Pods-eosswift-eosswiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eosswift-eosswiftTests/Pods-eosswift-eosswiftTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eosswift-eosswiftTests/Pods-eosswift-eosswiftTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB21B494D799CC7B5D093DC9 /* [CP] Check Pods Manifest.lock */ = {
@@ -1541,7 +1524,6 @@
 				3C02805621907C0E00D22DF0 /* TotalResources.swift in Sources */,
 				3C02803921907C0E00D22DF0 /* GetCurrencyBalance.swift in Sources */,
 				3C02803321907C0E00D22DF0 /* AbiForAccount.swift in Sources */,
-				3C02806521907C0E00D22DF0 /* VoteChain.swift in Sources */,
 				3C02802D21907C0E00D22DF0 /* AbiStruct.swift in Sources */,
 				3C02800321907C0E00D22DF0 /* RIPEMD160.swift in Sources */,
 				3C02802021907C0E00D22DF0 /* ChainApi.swift in Sources */,
@@ -1629,6 +1611,7 @@
 				3C02806021907C0E00D22DF0 /* CycleSummaryTransaction.swift in Sources */,
 				3C02800521907C0E00D22DF0 /* primitive_type.swift in Sources */,
 				3C592FDD219D71B800D7C9B9 /* BpBranding.swift in Sources */,
+				A6447D1A24BFF2CB009CEF6C /* VoteChain.swift in Sources */,
 				3C02800621907C0E00D22DF0 /* Base58.swift in Sources */,
 				3C02806621907C0E00D22DF0 /* VoteArgs.swift in Sources */,
 				3C02806221907C0E00D22DF0 /* BlockHeaderState.swift in Sources */,

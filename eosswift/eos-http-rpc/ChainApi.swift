@@ -49,7 +49,7 @@ class ChainApiImpl : ChainApi {
     func getInfo() -> Single<HttpResponse<Info>> {
         return RxHttp<RequestBody, Info, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_info",
+                url: self.rootUrl + "/v1/chain/get_chain_info",
                 method: "GET",
                 body: nil
             )
@@ -59,7 +59,7 @@ class ChainApiImpl : ChainApi {
     func getProducers(body: GetProducers) -> Single<HttpResponse<ProducerList>> {
         return RxHttp<GetProducers, ProducerList, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_producers",
+                url: self.rootUrl + "/v1/chain/get_producers",
                 method: "POST",
                 body: body
             )
@@ -69,7 +69,7 @@ class ChainApiImpl : ChainApi {
     func getBlock(body: BlockNumOrId) -> Single<HttpResponse<Block>> {
         return RxHttp<BlockNumOrId, Block, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_block",
+                url: self.rootUrl + "/v1/chain/get_block",
                 method: "POST",
                 body: body
             )
@@ -79,7 +79,7 @@ class ChainApiImpl : ChainApi {
     func getBlockHeaderState(body: BlockNumOrId) -> Single<HttpResponse<BlockHeaderState>> {
         return RxHttp<BlockNumOrId, BlockHeaderState, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_block_header_state",
+                url: self.rootUrl + "/v1/chain/get_block_header_state",
                 method: "POST",
                 body: body
             )
@@ -89,7 +89,7 @@ class ChainApiImpl : ChainApi {
     func getAccount(body: AccountName) -> Single<HttpResponse<Account>> {
         return RxHttp<AccountName, Account, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_account",
+                url: self.rootUrl + "/v1/chain/get_account",
                 method: "POST",
                 body: body
             )
@@ -99,7 +99,7 @@ class ChainApiImpl : ChainApi {
     func getAbi(body: AccountName) -> Single<HttpResponse<AbiForAccount>> {
         return RxHttp<AccountName, AbiForAccount, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_abi",
+                url: self.rootUrl + "/v1/chain/get_abi",
                 method: "POST",
                 body: body
             )
@@ -109,7 +109,7 @@ class ChainApiImpl : ChainApi {
     func getCode(body: GetCodeByAccountName) -> Single<HttpResponse<CodeForAccount>> {
         return RxHttp<GetCodeByAccountName, CodeForAccount, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_code",
+                url: self.rootUrl + "/v1/chain/get_code",
                 method: "POST",
                 body: body
             )
@@ -119,7 +119,7 @@ class ChainApiImpl : ChainApi {
     func getRawCodeAndAbi(body: AccountName) -> Single<HttpResponse<RawCodeForAccount>> {
         return RxHttp<AccountName, RawCodeForAccount, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_raw_code_and_abi",
+                url: self.rootUrl + "/v1/chain/get_raw_code_and_abi",
                 method: "POST",
                 body: body
             )
@@ -129,7 +129,7 @@ class ChainApiImpl : ChainApi {
     func getTableRows(body: GetTableRows) -> Single<HttpResponse<ContractTableRows>> {
         return RxHttp<GetTableRows, ContractTableRows, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_table_rows",
+                url: self.rootUrl + "/v1/chain/get_table_rows",
                 method: "POST",
                 body: body
             )
@@ -139,7 +139,7 @@ class ChainApiImpl : ChainApi {
     func getCurrencyBalance(body: GetCurrencyBalance) -> Single<HttpResponse<Array<String>>> {
         return RxHttp<GetCurrencyBalance, Array<String>, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_currency_balance",
+                url: self.rootUrl + "/v1/chain/get_currency_balance",
                 method: "POST",
                 body: body
             )
@@ -153,7 +153,7 @@ class ChainApiImpl : ChainApi {
     func abiBinToJson(body: AbiBinToJson) -> Single<HttpResponse<ResponseBody>> {
         return RxHttp<AbiBinToJson, ResponseBody, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/abi_bin_to_json",
+                url: self.rootUrl + "/v1/chain/abi_bin2json",
                 method: "POST",
                 body: body
             )
@@ -163,7 +163,7 @@ class ChainApiImpl : ChainApi {
     func getRequiredKeys(body: GetRequiredKeysBody) -> Single<HttpResponse<RequiredKeys>> {
         return RxHttp<GetRequiredKeysBody, RequiredKeys, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_required_keys",
+                url: self.rootUrl + "/v1/chain/get_required_keys",
                 method: "POST",
                 body: body
             )
@@ -173,7 +173,7 @@ class ChainApiImpl : ChainApi {
     func getCurrencyStats(body: GetCurrencyStats) -> Single<HttpResponse<ResponseBody>> {
         return RxHttp<GetCurrencyStats, ResponseBody, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/get_currency_stats",
+                url: self.rootUrl + "/v1/chain/get_currency_stats",
                 method: "POST",
                 body: body
             )
@@ -183,7 +183,7 @@ class ChainApiImpl : ChainApi {
     func pushTransaction(body: PushTransaction) -> Single<HttpResponse<TransactionCommitted>> {
         return RxHttp<PushTransaction, TransactionCommitted, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "v1/chain/push_transaction",
+                url: self.rootUrl + "/v1/chain/push_tx",
                 method: "POST",
                 body: body
             )

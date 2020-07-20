@@ -12,7 +12,7 @@ public class EOSPublicKey {
 
     public init(bytes: Data) {
         self.pubKeyData = bytes
-        self.base58 = Base58.encodeWithChecksum(prefix: "EOS", data: pubKeyData)
+        self.base58 = Base58.encodeWithChecksum(prefix: "UTR", data: pubKeyData)
     }
 
     public init(base58: String) throws {

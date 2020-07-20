@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name                   = 'eosswift'
   spec.version                = '1.6.0'
-  spec.ios.deployment_target  = '11.0'
+  spec.ios.deployment_target  = '9.0'
   spec.swift_version          = '4.2'
   spec.license                = { :type => 'APACHE-2.0' }
   spec.homepage               = 'https://github.com/memtrip/eos-swift'

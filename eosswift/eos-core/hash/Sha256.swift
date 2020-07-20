@@ -1,9 +1,9 @@
 import Foundation
 import CommonCrypto
 
-class Sha256Hash {
+public class Sha256Hash {
 
-    static func hash(data : Data) -> Data {
+    public static func hash(data : Data) -> Data {
 
         var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
         data.withUnsafeBytes {
@@ -12,7 +12,7 @@ class Sha256Hash {
         return Data(bytes: hash)
     }
 
-    static func hashTwice(data: Data) -> Data {
+    public static func hashTwice(data: Data) -> Data {
         return hash(data: hash(data: data))
     }
 }
