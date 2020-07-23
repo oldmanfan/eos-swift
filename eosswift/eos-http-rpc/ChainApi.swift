@@ -23,7 +23,7 @@ public protocol ChainApi {
 
     func getCurrencyBalance(body: GetCurrencyBalance) -> Single<HttpResponse<Array<String>>>
 
-    func abiJsonToBin(body: RequestBody) -> Single<HttpResponse<BinaryHex>>
+    func abiJsonToBin(body: AbiJsonToBin) -> Single<HttpResponse<AbiBinargs>>
 
     func abiBinToJson(body: AbiBinToJson) -> Single<HttpResponse<ResponseBody>>
 
@@ -32,6 +32,8 @@ public protocol ChainApi {
     func getCurrencyStats(body: GetCurrencyStats) -> Single<HttpResponse<ResponseBody>>
 
     func pushTransaction(body: PushTransaction) -> Single<HttpResponse<TransactionCommitted>>
+    
+    func getTransferFee(body: BlockHeight) -> Single<HttpResponse<TransferFee>>
 }
 
 class ChainApiImpl : ChainApi {
@@ -89,7 +91,7 @@ class ChainApiImpl : ChainApi {
     func getAccount(body: AccountName) -> Single<HttpResponse<Account>> {
         return RxHttp<AccountName, Account, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
-                url: self.rootUrl + "/v1/chain/get_account",
+                url: self.rootUrl + "/v1/chain/get_account_info",
                 method: "POST",
                 body: body
             )
@@ -146,8 +148,14 @@ class ChainApiImpl : ChainApi {
         )
     }
 
-    func abiJsonToBin(body: RequestBody) -> Single<HttpResponse<BinaryHex>> {
-        fatalError("The local abi byte writing should be used in replace of this call. Mobile clients that use this method are exposed to man in the middle attacks.")
+    func abiJsonToBin(body: AbiJsonToBin) -> Single<HttpResponse<AbiBinargs>> {
+        return RxHttp<AbiJsonToBin, AbiBinargs, ChainError>(urlSession, useLogger).single(
+            httpRequest: HttpRequest(
+                url: self.rootUrl + "/v1/chain/abi_json2bin",
+                method: "POST",
+                body: body
+            )
+        )
     }
 
     func abiBinToJson(body: AbiBinToJson) -> Single<HttpResponse<ResponseBody>> {
@@ -184,6 +192,16 @@ class ChainApiImpl : ChainApi {
         return RxHttp<PushTransaction, TransactionCommitted, ChainError>(urlSession, useLogger).single(
             httpRequest: HttpRequest(
                 url: self.rootUrl + "/v1/chain/push_tx",
+                method: "POST",
+                body: body
+            )
+        )
+    }
+    
+    func getTransferFee(body: BlockHeight) -> Single<HttpResponse<TransferFee>> {
+        return RxHttp<BlockHeight, TransferFee, ChainError>(urlSession, useLogger).single(
+            httpRequest: HttpRequest(
+                url: self.rootUrl + "/v1/chain/get_trans_fee",
                 method: "POST",
                 body: body
             )

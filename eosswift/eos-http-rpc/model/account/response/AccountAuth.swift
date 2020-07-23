@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AccountAuth : Decodable {
+public struct AccountAuth : Codable {
     public let permission: AccountAuthPermission
     public let weight: Int
     

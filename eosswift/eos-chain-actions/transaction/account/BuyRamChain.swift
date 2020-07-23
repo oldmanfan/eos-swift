@@ -39,7 +39,7 @@ public class BuyRamChain : ChainTransaction {
 
         return [ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "buyram"),
+            name: AccountActionWriterValue(name: "buyram"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

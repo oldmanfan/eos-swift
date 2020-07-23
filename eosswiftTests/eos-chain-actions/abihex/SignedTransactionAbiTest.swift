@@ -27,21 +27,21 @@ class SignedTransactionAbiTest: XCTestCase {
             actions: [
                 ActionAbi(
                     account: AccountNameWriterValue(name: "eosio"),
-                    name: AccountNameWriterValue(name: "newaccount"),
+                    name: AccountActionWriter(name: "newaccount"),
                     authorization: [TransactionAuthorizationAbi(
                         actor: AccountNameWriterValue(name: accountName),
                         permission: AccountNameWriterValue(name: "active"))],
                     data: DataWriterValue(hex: createNewAccountAbiHex)),
                 ActionAbi(
                     account: AccountNameWriterValue(name: "eosio"),
-                    name: AccountNameWriterValue(name: "buyrambytes"),
+                    name: AccountActionWriter(name: "buyrambytes"),
                     authorization: [TransactionAuthorizationAbi(
                         actor: AccountNameWriterValue(name: accountName),
                         permission: AccountNameWriterValue(name: "active"))],
                     data: DataWriterValue(hex: buyRamBytesAbi)),
                 ActionAbi(
                     account: AccountNameWriterValue(name: "eosio"),
-                    name: AccountNameWriterValue(name: "delegatebw"),
+                    name: AccountActionWriter(name: "delegatebw"),
                     authorization: [TransactionAuthorizationAbi(
                         actor: AccountNameWriterValue(name: accountName),
                         permission: AccountNameWriterValue(name: "active"))],

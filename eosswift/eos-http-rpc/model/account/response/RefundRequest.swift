@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RefundRequest : Decodable {
+public struct RefundRequest : Codable {
     public let owner: String
     public let request_time: Date
     public let net_amount: String

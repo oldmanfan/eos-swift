@@ -53,7 +53,7 @@ public class CreateAccountChain : ChainTransaction {
 
         abiList.append(ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "newaccount"),
+            name: AccountActionWriterValue(name: "newaccount"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],
@@ -61,7 +61,7 @@ public class CreateAccountChain : ChainTransaction {
         ))
         abiList.append(ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "buyrambytes"),
+            name: AccountActionWriterValue(name: "buyrambytes"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],
@@ -69,7 +69,7 @@ public class CreateAccountChain : ChainTransaction {
         ))
         abiList.append(ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "delegatebw"),
+            name: AccountActionWriterValue(name: "delegatebw"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

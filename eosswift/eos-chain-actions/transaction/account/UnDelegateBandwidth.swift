@@ -45,7 +45,7 @@ public class UnDelegateBandwidthChain : ChainTransaction {
 
         return [ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "undelegatebw"),
+            name: AccountActionWriterValue(name: "undelegatebw"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

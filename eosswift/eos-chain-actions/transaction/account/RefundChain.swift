@@ -28,7 +28,7 @@ public class RefundChain : ChainTransaction {
 
         return [ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "refund"),
+            name: AccountActionWriterValue(name: "refund"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

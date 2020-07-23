@@ -52,7 +52,7 @@ public class TransferChain : ChainTransaction {
 
         return [ActionAbi(
             account: AccountNameWriterValue(name: contract),
-            name: AccountNameWriterValue(name: "transfer"),
+            name: AccountActionWriterValue(name: "transfer"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

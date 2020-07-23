@@ -52,6 +52,7 @@ public class SafeInt64: Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
+        let container = encoder.singleValueContainer()
         fatalError("encoding not supported")
     }
 }

@@ -9,7 +9,7 @@ class ActionAbiTests: XCTestCase {
         let createBuyRamBytes = try createBuyRamBytesAbi()
         let actionAbi = ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "buyrambytes"),
+            name: AccountActionWriter(name: "buyrambytes"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: "memtripissue"),
                 permission: AccountNameWriterValue(name: "active"))],

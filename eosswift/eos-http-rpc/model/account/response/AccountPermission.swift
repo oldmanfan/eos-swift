@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AccountPermission : Decodable {
+public struct AccountPermission : Codable {
     public let perm_name: String
     public let parent: String
     public let required_auth: AccountRequiredAuth

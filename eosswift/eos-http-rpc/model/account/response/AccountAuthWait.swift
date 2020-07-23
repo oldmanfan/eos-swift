@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AccountAuthWait : Decodable {
+public struct AccountAuthWait : Codable {
     public let wait_sec: Int64
     public let weight: Int
     

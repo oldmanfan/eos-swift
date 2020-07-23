@@ -69,11 +69,13 @@ public class RxHttp<REQ: Encodable, RES: Decodable, ERR: Decodable> {
             request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
             request.httpBody = json
             logger.log(value: json)
+            print("httpbody: ", String(data: json, encoding: .utf8)!)
         }
 
         let task = connection.request(urlRequest: request) { (data, response, error) in
-
+            print("response: ", String(data: data!, encoding: .utf8)!)
             if let res = response as? HTTPURLResponse {
+                print("statusCode: \(res.statusCode)")
                 self.logger.log(value: "status_code: \(res.statusCode)")
 
                 if res.statusCode >= 200 && res.statusCode < 300 {

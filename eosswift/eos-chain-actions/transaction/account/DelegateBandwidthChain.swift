@@ -48,7 +48,7 @@ public class DelegateBandwidthChain : ChainTransaction {
 
         return [ActionAbi(
             account: AccountNameWriterValue(name: "eosio"),
-            name: AccountNameWriterValue(name: "delegatebw"),
+            name: AccountActionWriterValue(name: "delegatebw"),
             authorization: [TransactionAuthorizationAbi(
                 actor: AccountNameWriterValue(name: transactionContext.authorizingAccountName),
                 permission: AccountNameWriterValue(name: "active"))],

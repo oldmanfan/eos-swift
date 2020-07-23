@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AccountAuthPermission : Decodable {
+public struct AccountAuthPermission : Codable {
     public let actor: String
     public let permission: String
     

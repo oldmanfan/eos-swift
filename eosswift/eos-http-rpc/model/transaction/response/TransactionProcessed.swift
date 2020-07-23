@@ -7,13 +7,17 @@ public struct TransactionProcessed : Decodable {
     public let net_usage: Int
     public let scheduled: Bool
     public let action_traces: Array<TransactionActionTrace>
+    public let except: String?
+    public let ability: String
 
-    public init(id: String, receipt: TransactionParentReceipt, elapsed: Int, net_usage: Int, scheduled: Bool, action_traces: Array<TransactionActionTrace>) {
+    public init(id: String, receipt: TransactionParentReceipt, elapsed: Int, net_usage: Int, scheduled: Bool, action_traces: Array<TransactionActionTrace>, except: String? = nil, ability: String) {
         self.id = id
         self.receipt = receipt
         self.elapsed = elapsed
         self.net_usage = net_usage
         self.scheduled = scheduled
         self.action_traces = action_traces
+        self.except = except
+        self.ability = ability
     }
 }
