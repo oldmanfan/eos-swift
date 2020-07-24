@@ -30,7 +30,7 @@ extension Bool: JSONType {
 }
 
 public struct AnyJSONType: JSONType {
-    public let jsonValue: Any?
+    public var jsonValue: Any?
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -53,6 +53,19 @@ public struct AnyJSONType: JSONType {
     }
     
     public func encode(to encoder: Encoder) throws {
-        fatalError("encoding not supported")
+        var container = encoder.singleValueContainer()
+        if let v = jsonValue as? Int {
+            try container.encode(v)
+        } else if let v = jsonValue as? Bool {
+            try container.encode(v)
+        } else if let v = jsonValue as? Double {
+            try container.encode(v)
+        } else if let v = jsonValue as? Array<AnyJSONType> {
+            try container.encode(v)
+        } else if let v = jsonValue as? Dictionary<String, AnyJSONType> {
+            try container.encode(v)
+        } else if let v = jsonValue as? String {
+            try container.encode(v)
+        }
     }
 }

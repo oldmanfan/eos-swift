@@ -22,7 +22,7 @@ extension String {
 
 public extension Date {
 
-    public static func defaultTransactionExpiry() -> Date {
+    static func defaultTransactionExpiry() -> Date {
         return Date(timeIntervalSince1970: (Date().timeIntervalSince1970) + 120)
     }
 }

@@ -34,7 +34,7 @@ public class ActionWriterValue : ActionWriter, Encodable {
         var lsb: Int64 = 0
         var hsb: Int64 = 0
         
-        for i in 0..<NAME_MAX_LENGTH {
+        for i in 0..<len {
             let sym = charToSymbol(c: name[i].toUInt8());
             if (i <= 9) {
                 temp |= (sym << (6 * i));

@@ -65,6 +65,8 @@ extension AbiEncoder {
                 try abiEncodingContainer.encode(child.value as! NameWriter)
             case is AccountNameWriter:
                 try abiEncodingContainer.encode(child.value as! AccountNameWriter)
+            case is AccountActionWriter:
+                try abiEncodingContainer.encode(child.value as! AccountActionWriter)
             case is BlockNumWriter:
                 try abiEncodingContainer.encode(child.value as! BlockNumWriter)
             case is BlockPrefixWriter:

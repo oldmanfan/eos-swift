@@ -28,4 +28,25 @@ public struct TransactionAct : Codable {
             self.data = [:]
         }
     }
+
+    enum CodingKeys: String, CodingKey {
+        case account
+        case name
+        case authorization
+        case hex_data
+        case data
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(account, forKey: .account)
+        try container.encode(name, forKey: .name)
+        try container.encode(authorization, forKey: .authorization)
+        try container.encode(hex_data, forKey: .hex_data)
+        do {
+            try container.encode(data, forKey: .data)
+        } catch {
+            try container.encode("{}", forKey: .data)
+        }
+    }
 }

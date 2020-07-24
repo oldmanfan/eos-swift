@@ -141,6 +141,10 @@ class AbiEncodingContainer : UnkeyedEncodingContainer {
         try value.encode(writer: self)
     }
 
+    func encode(_ value: AccountActionWriter) throws {
+        try value.encode(writer: self)
+    }
+
     func encode(_ value: BlockNumWriter) throws {
         try value.encode(writer: self)
     }

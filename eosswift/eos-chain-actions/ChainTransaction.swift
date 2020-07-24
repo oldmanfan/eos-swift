@@ -6,7 +6,7 @@ public protocol ChainTransaction {
 }
 
 public extension ChainTransaction {
-    public func push(
+    func push(
         actions: [ActionAbi],
         transactionContext: TransactionContext
     ) -> Single<ChainResponse<TransactionCommitted>> {
