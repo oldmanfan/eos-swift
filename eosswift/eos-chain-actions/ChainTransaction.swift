@@ -49,7 +49,7 @@ public extension ChainTransaction {
         }
     }
 
-    private func createTransactionAbi(expirationDate: Date,
+    public func createTransactionAbi(expirationDate: Date,
                              blockIdDetails: BlockIdDetails,
                              actions: Array<ActionAbi>) -> TransactionAbi {
         return TransactionAbi(
